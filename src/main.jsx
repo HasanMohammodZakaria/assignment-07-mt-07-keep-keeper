@@ -7,6 +7,7 @@ import RootLayout from './layout/RootLayout'
 import HomePage from './pages/HomePage/HomePage'
 import TimeLine from './pages/TimeLinePage/TimeLine'
 import Stats from './pages/StatsPage/Stats'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
        Component: Stats,
       },
     ],
-    errorElement: <h2>This page is not found</h2>
+    errorElement: <NotFoundPage />
   },
 ]);
 
