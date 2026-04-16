@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import FriendCard from '../../ui/FriendCard';
+import React from 'react';
+import FriendCard from '../ui/FriendCard';
 import { CircleLoader} from 'react-spinners';
+import useFriends from '../../hooks/useFriends';
 
 const Friends = () => {
-
-    const [friends, setFriends] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async() => {
-            const res = await fetch('/data.json');
-            const data = await res.json();
-            //console.log(data);
-            setTimeout(() => {
-                setFriends(data.friends);
-                setLoading(false);
-            }, 1500);
-        }
-        fetchData();
-    },[]);
+    const {friends, loading} = useFriends();
 
     console.log(friends, "Friends");
     console.log(loading, "loading");

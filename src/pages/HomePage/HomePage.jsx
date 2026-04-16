@@ -1,7 +1,7 @@
 import React from 'react';
-import Banner from '../../components/shared/HomePage/Banner';
-import Summary from '../../components/shared/HomePage/Summary';
-import Friends from '../../components/shared/HomePage/Friends';
+import Banner from '../../components/HomePage/Banner';
+import Summary from '../../components/HomePage/Summary';
+import Friends from '../../components/HomePage/Friends';
 
 
 const HomePage = () => {
