@@ -8,6 +8,7 @@ import { PiArchive, PiChatTextBold, PiVideoCameraLight } from "react-icons/pi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { BiPhoneCall } from "react-icons/bi";
 import { TimeLinesContext } from "../../context/TimeLinesContext";
+import { toast } from "react-toastify";
 
 
 
@@ -81,6 +82,7 @@ const FriendDetails = () => {
     };
 
     setTimeLines([...timeLines, friendData]);
+    toast.success(`${expectedFriend.name} Successfully Added TimeLine!`);
   };
 
   //console.log(timeLines, "TimeLines");
