@@ -1,16 +1,61 @@
-# React + Vite
+# 💙 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📝 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+KeenKeeper is a simple and user-friendly web application that helps you stay connected with your friends. It tracks your communication activities like text messages, calls, and video chats in a clear and visual way.
 
-## React Compiler
+The main goal of this project is to show that small interactions matter and help keep friendships strong over time.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🧩 Core
+
+* ⚡ Vite
+* ⚛️ React.js
+* 🔀 React Router
+
+### 🎨 Styling & UI
+
+* 🎨 Tailwind CSS
+* 💅 DaisyUI
+* 🧾 CSS
+
+### 📊 Data Visualization
+
+* 📈 Recharts
+
+### 🔔 Notifications & UI Feedback
+
+* 🔔 React Toastify
+* ⏳ React Spinners
+
+### 🎯 Utilities
+
+* 🎯 React Icons
+* 🔄 Context API
+
+### 🌐 Deployment
+
+* ▲ Vercel
+
+---
+
+## ✨ Key Features
+
+* 📊 **Activity Analytics**
+  View a visual chart of communication types like text, calls, and video.
+
+* 🕒 **Timeline View**
+  Track all interactions in a clean and structured timeline.
+
+* 🎯 **Smart Filtering**
+  Easily filter activities based on type.
+
+* 🔔 **User Feedback System**
+  Toast notifications and loading spinners for better user experience.
+
+---
