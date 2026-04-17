@@ -10,24 +10,21 @@ const TimeLine = () => {
   const [filter, setFilter] = useState("all");
   const [open, setOpen] = useState(false);
 
-  const filteredData = timeLines?.filter((item) => {
-    if (filter === "all"){
-        return true;
-    }else {
-        return item.type === filter;
-    }
-    
+  
+  const filteredData = (timeLines || []).filter((item) => {
+    if (filter === "all") return true;
+    return item.type === filter;
   });
 
   const iconGet = (type) => {
     if (type === "call") {
       return <IoCall className="text-[26px] sm:text-[32px] md:text-[40px]" />;
-    }
+    } 
     else if (type === "text") {
       return (
         <PiChatCircleTextFill className="text-[26px] sm:text-[32px] md:text-[40px]" />
       );
-    }
+    } 
     else if (type === "video") {
       return <FaVideo className="text-[26px] sm:text-[32px] md:text-[40px]" />;
     }
@@ -35,12 +32,12 @@ const TimeLine = () => {
 
   return (
     <div className="max-w-full md:max-w-285 px-4 mx-auto mt-10">
-     
+
       <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-[#1F2937] mb-3 sm:mb-4">
         Timeline
       </h2>
 
-      
+    
       <div className="relative inline-block mb-5 sm:mb-6">
         <button
           onClick={() => setOpen(!open)}
@@ -59,6 +56,7 @@ const TimeLine = () => {
         {open && (
           <div className="absolute left-0 mt-2 w-36 sm:w-40 bg-white shadow-md rounded z-10">
             <ul className="flex flex-col text-[14px] sm:text-[16px]">
+
               <li
                 onClick={() => {
                   setFilter("all");
@@ -98,14 +96,17 @@ const TimeLine = () => {
               >
                 Video
               </li>
+
             </ul>
           </div>
         )}
       </div>
 
      
-      {filteredData?.map((item, index) => {
-        return (
+      {filteredData.length === 0 ? (
+        <h2 className="text-2xl font-bold text-black">No Friends Data Found!</h2>
+      ) : (
+        filteredData.map((item, index) => (
           <div
             key={index}
             className="bg-white drop-shadow-md flex gap-3 sm:gap-4 items-center px-4 sm:px-5 py-4 sm:py-7 rounded-lg mb-4 sm:mb-5"
@@ -125,8 +126,8 @@ const TimeLine = () => {
               </p>
             </div>
           </div>
-        );
-      })}
+        ))
+      )}
     </div>
   );
 };
