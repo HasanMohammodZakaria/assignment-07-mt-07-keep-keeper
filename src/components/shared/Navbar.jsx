@@ -1,25 +1,51 @@
-
 import headerLogo from "../../assets/logo.png";
 import { NavLink } from "react-router";
 import { RiHome2Line } from "react-icons/ri";
 import { GoClock } from "react-icons/go";
 import { TfiStatsUp } from "react-icons/tfi";
+import { FiSearch } from "react-icons/fi";
 
 const navLinkActive = ({ isActive }) =>
   isActive
-    ? "flex items-center gap-1 bg-[#244D3F] text-white rounded-lg px-3 py-2"
-    : "flex items-center gap-1 text-black";
+    ? "flex items-center gap-1 bg-[#244D3F] text-white text-[16px] font-medium rounded-lg px-3 py-2"
+    : "flex items-center gap-1 text-[#64748B] text-[16px] font-medium";
 
 const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm">
-      <div className="flex justify-between items-center container mx-auto px-4 py-4">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div className="flex items-center justify-between container mx-auto px-2 sm:px-4 py-3">
+        <div>
+          <img src={headerLogo} alt="logo" className="w-24 sm:w-32" />
+
+        </div>
+
+      
+        <div className="flex items-center gap-3">
+          
+          <ul className="hidden lg:flex menu menu-horizontal gap-2 px-1">
+            <li>
+              <NavLink to="/" className={navLinkActive}>
+                <RiHome2Line /> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/timeline" className={navLinkActive}>
+                <GoClock /> TimeLine
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/stats" className={navLinkActive}>
+                <TfiStatsUp /> Stats
+              </NavLink>
+            </li>
+          </ul>
+
+          
+          <div className="lg:hidden dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -33,10 +59,7 @@ const Navbar = () => {
               </svg>
             </div>
 
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-1"
-            >
+            <ul className="menu menu-sm dropdown-content mt-3 w-52 p-2 shadow bg-base-100 rounded-box z-50">
               <li>
                 <NavLink to="/" className={navLinkActive}>
                   <RiHome2Line /> Home
@@ -54,32 +77,6 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-
-          <img
-            src={headerLogo}
-            alt="Header Logo"
-            className="w-28 sm:w-32 md:w-36"
-          />
-        </div>
-
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-2 px-1">
-            <li>
-              <NavLink to="/" className={navLinkActive}>
-                <RiHome2Line /> Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/timeline" className={navLinkActive}>
-                <GoClock /> TimeLine
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/stats" className={navLinkActive}>
-                <TfiStatsUp /> Stats
-              </NavLink>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
