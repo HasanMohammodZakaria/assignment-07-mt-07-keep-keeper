@@ -34,9 +34,9 @@ const Stats = () => {
       </h2>
 
       
-      <div className="w-full bg-white shadow-md rounded-2xl p-6 sm:p-10">
+      <div className="w-full bg-white shadow-md rounded-2xl p-4 sm:p-6">
      
-        <h3 className="text-left text-lg font-semibold text-gray-700 mb-6">
+        <h3 className="text-left text-lg font-semibold text-gray-700 mb-3">
           By Interaction Type
         </h3>
 
@@ -45,7 +45,7 @@ const Stats = () => {
           <PieChart
             style={{
               width: "100%",
-              maxWidth: "500px",
+              maxWidth: "320px",
               maxHeight: "80vh",
               aspectRatio: 1,
             }}
