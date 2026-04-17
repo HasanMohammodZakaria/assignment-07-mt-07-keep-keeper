@@ -5,12 +5,11 @@ import { TimeLinesContext } from "../../context/TimeLinesContext";
 const Stats = () => {
   const { timeLines } = useContext(TimeLinesContext);
 
- 
   const data = [
     {
       name: "Text",
       value: timeLines?.filter((t) => t.type === "text")?.length || 0,
-      fill: " #244d3f",
+      fill: "#244d3f",
     },
     {
       name: "Call",
@@ -25,41 +24,51 @@ const Stats = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-15">
-
+    <div className="w-full max-w-6xl mx-auto mt-15 px-4">
      
-      <div className="w-full max-w-125 sm:max-w-150">
+      <h2
+        className="text-[#1F2937] font-bold text-left mb-8 
+        text-3xl sm:text-4xl md:text-5xl lg:text-[48px]"
+      >
+        Friendship Analytics
+      </h2>
 
+      
+      <div className="w-full bg-white shadow-md rounded-2xl p-6 sm:p-10">
      
-        <PieChart
-          style={{
-            width: "100%",
-            maxWidth: "500px",
-            maxHeight: "80vh",
-            aspectRatio: 1,
-          }}
-          responsive
-        >
-          <Pie
-            data={data}
-            innerRadius="80%"
-            outerRadius="100%"
-            cornerRadius="50%"
-            fill="#8884d8"
-            paddingAngle={5}
-            dataKey="value"
-            isAnimationActive={true}
-          />
-          <Legend />
-          <Tooltip />
-        </PieChart>
+        <h3 className="text-left text-lg font-semibold text-gray-700 mb-6">
+          By Interaction Type
+        </h3>
 
+       
+        <div className="flex justify-center items-center">
+          <PieChart
+            style={{
+              width: "100%",
+              maxWidth: "500px",
+              maxHeight: "80vh",
+              aspectRatio: 1,
+            }}
+          >
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={80}
+              outerRadius={110}
+              cornerRadius={50}
+              paddingAngle={5}
+              dataKey="value"
+              isAnimationActive={true}
+            />
+
+            <Legend />
+            <Tooltip />
+          </PieChart>
+        </div>
       </div>
-
     </div>
   );
 };
 
 export default Stats;
-
-

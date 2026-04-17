@@ -7,22 +7,29 @@ import { FiSearch } from "react-icons/fi";
 
 const navLinkActive = ({ isActive }) =>
   isActive
-    ? "flex items-center gap-1 bg-[#244D3F] text-white text-[16px] font-medium rounded-lg px-3 py-2"
-    : "flex items-center gap-1 text-[#64748B] text-[16px] font-medium";
+    ? "flex items-center gap-1 bg-[#244D3F] text-white text-[15px] font-medium rounded-lg px-3 py-2"
+    : "flex items-center gap-1 text-[#64748B] text-[15px] font-medium hover:text-[#244D3F]";
 
 const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm">
-      <div className="flex items-center justify-between container mx-auto px-2 sm:px-4 py-3">
-        <div>
-          <img src={headerLogo} alt="logo" className="w-24 sm:w-32" />
+      
+      
+      <div className="flex items-center justify-between w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-6 py-3">
 
+        
+        <div className="flex items-center">
+          <img
+            src={headerLogo}
+            alt="logo"
+            className="w-24 sm:w-28 md:w-32"
+          />
         </div>
 
-      
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+
           
-          <ul className="hidden lg:flex menu menu-horizontal gap-2 px-1">
+          <ul className="hidden lg:flex items-center gap-2">
             <li>
               <NavLink to="/" className={navLinkActive}>
                 <RiHome2Line /> Home
@@ -42,7 +49,7 @@ const Navbar = () => {
 
           
           <div className="lg:hidden dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost">
+            <div tabIndex={0} role="button" className="btn btn-ghost p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -77,6 +84,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+
         </div>
       </div>
     </div>
