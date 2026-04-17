@@ -12,7 +12,7 @@ const FriendCard = ({ friend }) => {
   };
 
   const statusStyle = {
-    overdue: "bg-[#EF4444] text-[12px] font-medium text-white rounded-full p-3",
+    "overdue": "bg-[#EF4444] text-[12px] font-medium text-white rounded-full p-3",
     "almost due":
       "bg-[#EFAD44] text-[12px] font-medium text-white rounded-full p-3",
     "on-track":
